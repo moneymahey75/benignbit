@@ -1,0 +1,96 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer.astro';
+import { ArrowRight, Check } from 'lucide-react';
+import { services } from '@/lib/data';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: services.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: s.title,
+    url: `https://benignbit.com/services/${s.slug}`,
+  })),
+};
+---
+
+<Layout
+  title="Our Services — Web, Software, Mobile, Marketing & Design"
+  description="Explore BenignBit's full range of IT services: website development, software development, mobile apps, digital marketing, SEO and UI/UX design."
+  keywords="IT services, web development, software development, mobile apps, digital marketing, SEO, UI UX design"
+  canonical="/services"
+  jsonLd={jsonLd}
+>
+  <Header client:load />
+
+  <main>
+    <section class="relative overflow-hidden border-b border-border pt-28 md:pt-36">
+      <div class="absolute inset-0 grid-pattern opacity-40"></div>
+      <div class="absolute -left-32 top-10 h-80 w-80 rounded-full bg-primary/20 blur-3xl"></div>
+      <div class="container-page relative pb-16">
+        <span class="text-sm font-semibold uppercase tracking-wider text-primary">Services</span>
+        <h1 class="mt-3 max-w-3xl font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+          Everything you need to build and grow online
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          Six core services, one accountable team. From your first website to a full digital growth engine, BenignBit covers every step of the journey.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container-page space-y-8">
+        {services.map((s, i) => (
+          <article class={`grid items-center gap-10 rounded-3xl border border-border bg-card p-8 md:p-12 lg:grid-cols-2 ${i % 2 === 1 ? 'lg:[&>div:first-child]:order-2' : ''}`}>
+            <div>
+              <span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                <s.icon class="h-3.5 w-3.5" />
+                {s.title}
+              </span>
+              <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl">{s.title}</h2>
+              <p class="mt-3 leading-relaxed text-muted-foreground">{s.description}</p>
+              <ul class="mt-6 grid gap-2 sm:grid-cols-2">
+                {s.features.slice(0, 4).map((f) => (
+                  <li class="flex items-start gap-2 text-sm text-foreground/90">
+                    <Check class="mt-0.5 h-4 w-4 shrink-0 text-accent" /> {f}
+                  </li>
+                ))}
+              </ul>
+              <a href={`/services/${s.slug}`} class="mt-7 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
+                Explore {s.title} <ArrowRight class="h-4 w-4" />
+              </a>
+            </div>
+            <div class="relative">
+              <div class="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/15 to-accent/15 blur-2xl"></div>
+              <div class="relative flex aspect-[4/3] items-center justify-center rounded-2xl border border-border bg-gradient-to-br from-primary/5 to-accent/10">
+                <s.icon class="h-24 w-24 text-primary/40" strokeWidth={1.2} />
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container-page">
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-accent px-6 py-16 text-center shadow-2xl md:px-16">
+          <div class="absolute inset-0 grid-pattern opacity-10"></div>
+          <div class="relative">
+            <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Not sure which service you need?</h2>
+            <p class="mx-auto mt-4 max-w-xl text-white/90">Tell us your goals and we will recommend the right mix of services to get you there.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+              <a href="/get-quote" class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 text-sm font-semibold text-primary shadow-lg transition-transform hover:-translate-y-0.5">
+                Get a Free Quote <ArrowRight class="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

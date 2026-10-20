@@ -1,0 +1,90 @@
+---
+import { companyInfo, services } from '@/lib/data';
+import { Twitter, Linkedin, Github, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+
+const year = new Date().getFullYear();
+const icons = { Twitter, Linkedin, Github, Instagram };
+const socials = [
+  { name: 'Twitter', href: companyInfo.social.twitter, Icon: Twitter },
+  { name: 'LinkedIn', href: companyInfo.social.linkedin, Icon: Linkedin },
+  { name: 'GitHub', href: companyInfo.social.github, Icon: Github },
+  { name: 'Instagram', href: companyInfo.social.instagram, Icon: Instagram },
+];
+---
+
+<footer class="border-t border-border bg-card">
+  <div class="container-page py-16">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <a href="/" class="inline-flex items-center rounded-xl bg-white p-2 shadow-sm ring-1 ring-black/5" aria-label="BenignBit home">
+          <img src="/benign-bit-logo.jpg" alt="BenignBit Software Development" class="h-20 w-48 rounded-lg object-contain" />
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+          {companyInfo.tagline}. We help businesses worldwide build faster websites, smarter software and stronger brands.
+        </p>
+        <div class="mt-6 flex gap-3">
+          {socials.map(({ name, href, Icon }) => (
+            <a
+              key={name}
+              href={href}
+              aria-label={name}
+              class="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              <Icon class="h-4 w-4" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">Services</h3>
+        <ul class="mt-4 space-y-2.5">
+          {services.map((s) => (
+            <li>
+              <a href={`/services/${s.slug}`} class="text-sm text-muted-foreground transition-colors hover:text-primary">{s.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">Company</h3>
+        <ul class="mt-4 space-y-2.5">
+          <li><a href="/about" class="text-sm text-muted-foreground hover:text-primary">About Us</a></li>
+          <li><a href="/portfolio" class="text-sm text-muted-foreground hover:text-primary">Portfolio</a></li>
+          <li><a href="/get-quote" class="text-sm text-muted-foreground hover:text-primary">Get a Quote</a></li>
+          <li><a href="/contact" class="text-sm text-muted-foreground hover:text-primary">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-4">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">Get in touch</h3>
+        <ul class="mt-4 space-y-3">
+          <li class="flex items-start gap-3 text-sm text-muted-foreground">
+            <Mail class="mt-0.5 h-4 w-4 text-primary" />
+            <a href={`mailto:${companyInfo.email}`} class="hover:text-primary">{companyInfo.email}</a>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-muted-foreground">
+            <Phone class="mt-0.5 h-4 w-4 text-primary" />
+            <a href={`tel:${companyInfo.phone.replace(/[^+\d]/g, '')}`} class="hover:text-primary">{companyInfo.phone}</a>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-muted-foreground">
+            <MapPin class="mt-0.5 h-4 w-4 text-primary" />
+            <span>{companyInfo.address}</span>
+          </li>
+        </ul>
+        <a href="/get-quote" class="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
+          Start a project
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground sm:flex-row">
+      <p>&copy; {year} BenignBit. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="/privacy" class="hover:text-primary">Privacy Policy</a>
+        <a href="/terms" class="hover:text-primary">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
