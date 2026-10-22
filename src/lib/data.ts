@@ -413,7 +413,7 @@ export const companyInfo = {
   name: 'BenignBit',
   tagline: 'Crafting digital experiences that drive growth',
   email: 'hello@benignbit.com',
-  phone: '+1 (555) 123-4567',
+  phone: '+91 (981) 544-2933',
   address: '123 Innovation Drive, Tech Park, Suite 400',
   hours: 'Mon – Fri, 9:00 AM – 6:00 PM',
   social: {

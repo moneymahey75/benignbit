@@ -12,6 +12,8 @@ export const GET: APIRoute = () => {
     '/contact',
     '/privacy',
     '/terms',
+    '/policy',
+    '/vaccine-policy',
   ];
 
   const serviceRoutes = services.map((s) => `/services/${s.slug}`);
