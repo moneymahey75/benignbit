@@ -412,7 +412,7 @@ export const industries = [
 export const companyInfo = {
   name: 'BenignBit',
   tagline: 'Crafting digital experiences that drive growth',
-  email: 'hello@benignbit.com',
+  email: 'money@benignbit.com',
   phone: '+91 (981) 544-2933',
   address: '123 Innovation Drive, Tech Park, Suite 400',
   hours: 'Mon – Fri, 9:00 AM – 6:00 PM',
