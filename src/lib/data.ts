@@ -414,7 +414,7 @@ export const companyInfo = {
   tagline: 'Crafting digital experiences that drive growth',
   email: 'money@benignbit.com',
   phone: '+91 (981) 544-2933',
-  address: '123 Innovation Drive, Tech Park, Suite 400',
+  address: 'Sector 70, Mohali, Punjab, India',
   hours: 'Mon – Fri, 9:00 AM – 6:00 PM',
   social: {
     twitter: 'https://twitter.com/benignbit',
