@@ -365,6 +365,25 @@ export const projects: Project[] = [
     ],
     url: 'https://htginfotech.com',
   },
+  {
+    slug: 'yoyotiffin-online-ordering',
+    title: 'YoYoTiffin Online Ordering Platform',
+    client: 'YoYoTiffin',
+    category: 'Website Development',
+    year: '2025',
+    image: 'https://images.pexels.com/photos/12737912/pexels-photo-12737912.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    tags: ['Food & Beverage', 'React', 'E-commerce', 'SEO'],
+    summary: 'An online tiffin ordering platform with daily meal subscriptions and doorstep delivery.',
+    description:
+      'YoYoTiffin, a homemade tiffin service in Navi Mumbai, needed a digital presence to scale beyond walk-in and phone orders. We built an online ordering platform with a full menu, customizable meal plans, daily and monthly subscription options, and a delivery management dashboard. The new site made it effortless for working professionals and students to order fresh, home-cooked meals — resulting in rapid growth in daily orders within the first few months.',
+    results: [
+      { label: 'Daily orders', value: '800+' },
+      { label: 'Subscription sign-ups', value: '2,300+' },
+      { label: 'Order time', value: 'Under 90s' },
+      { label: 'Repeat order rate', value: '74%' },
+    ],
+    url: 'https://yoyotiffin.com',
+  },
 ];
 
 export interface Testimonial {
