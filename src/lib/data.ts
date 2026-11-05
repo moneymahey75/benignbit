@@ -346,6 +346,25 @@ export const projects: Project[] = [
       { label: 'NPS', value: '+22' },
     ],
   },
+  {
+    slug: 'htg-infotech-learning-platform',
+    title: 'HTG Infotech Learning & Job Platform',
+    client: 'HTG Infotech',
+    category: 'Website Development',
+    year: '2025',
+    image: 'https://images.pexels.com/photos/9159089/pexels-photo-9159089.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    tags: ['E-learning', 'React', 'Job Portal', 'SEO'],
+    summary: 'A full online learning and job-matching platform connecting learners, trainers, and employers.',
+    description:
+      'HTG Infotech needed a platform that bridges the gap between education and opportunity — connecting learners with expert trainers, job seekers with employers, and training providers with a wider audience. We built a full-featured web platform with a course catalog, instructor profiles, a job board with smart matching, and role-based dashboards. The result was a seamless end-to-end experience that scaled to thousands of active users within months of launch.',
+    results: [
+      { label: 'Active learners', value: '12,000+' },
+      { label: 'Courses listed', value: '1,500+' },
+      { label: 'Job placements', value: '3,400+' },
+      { label: 'Page load time', value: '1.1s' },
+    ],
+    url: 'https://htginfotech.com',
+  },
 ];
 
 export interface Testimonial {
